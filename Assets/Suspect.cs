@@ -3,31 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// This class represents an instance of a suspect object. It stores variables about the suspects current state and bools to track where in the confession process the suspect is.
+/// </summary>
 public class Suspect : MonoBehaviour
 {
-    /**
-     * This Class represents an instance of a Suspect.
-     * 
-     */
+   
 
-
-    private string[] dialouge;
-    private int _denialLevel = 0; //game ends if it reaches 10, affects dialouge and confession;
-    private int egoLevel = 5; //max of 10, affects dialouge and confession
-    private int futilityLevel = 5; //max of 10, affects dialouge and confession
-    private int attention = 5; //max of 10, affects dialouge and confession
-    private bool firstConfession = false; //if they have addmitted to a lesser crime
-    private bool secondConfession = false; //if they have been fully caught
-    private bool demandedLayer = false;
 
     public bool emotional = false;
-    public float timeBetweenWords = 2f;
-    public TextMeshProUGUI suspectText;
+    public int _denialLevel = 0; //game ends if it reaches 10, affects dialouge and confession;
+    public int egoLevel = 5; //max of 10, affects dialouge and confession
+    public int futilityLevel = 5; //max of 10, affects dialouge and confession
+    public int attention = 5; //max of 10, affects dialouge and confession
+    public bool firstConfession = false; //if they have admitted to a lesser crime
+    public bool secondConfession = false; //if they have been fully caught
+    public bool demandedLayer = false; //lose conditong
 
-    string currentResponse;
-    public bool responding = false;
-    
 
+    /* OLD CODE FROM PROTOTYPE
     string[] denialOptions = {   "I didnt do this.",
                                  "I could never hurt Dylan.",
                                  "I love Dylan. I didnt hurt him.",
@@ -46,27 +40,9 @@ public class Suspect : MonoBehaviour
                                  "This is crazy. I would never hurt Dylan."};
     string demandLawyer = "I want a Lawyer";
     string firstConfessionText = "I didnt mean to hurt Dylan. Sometimes he would just make me mad and I couldnt control my anger. I hit him once or twice but I could never kill him.";
+    
 
 
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    //if by change the suspect decides to throw an objection, there is a timer and the UI changes
-    void Objection()
-    {
-
-    }
 
     //intent is 1-4 based on players intent
     public void getResponse(int _intent)
@@ -146,21 +122,11 @@ public class Suspect : MonoBehaviour
         StartCoroutine(Respond());
     }
 
-    IEnumerator Respond()
+    */
+
+    public void makeEmotional()
     {
-        responding = true;
-
-        string[] words = currentResponse.Split(' ');
-        string currentResponseText = "";
-
-        foreach(string word in words)
-        {
-            currentResponseText = currentResponseText + " " + word;
-            suspectText.SetText(currentResponseText);
-            yield return new WaitForSeconds(timeBetweenWords);
-        }
-
-        responding = false;
-
+        emotional = !emotional;
     }
+
 }

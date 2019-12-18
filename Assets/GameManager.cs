@@ -5,7 +5,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-
+    /*
     public UIManager UIManager;
     public Suspect currentSuspect;
     public Suspect[] allSuspects;
@@ -163,7 +163,7 @@ public class GameManager : MonoBehaviour
        
     }
 
-
+    */
 
 
 }

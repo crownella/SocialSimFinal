@@ -1,0 +1,555 @@
+[
+  {
+    "name": "Confront [H] D,  [H] F,  [H] E,  [L] A",
+    "criteria": [
+      "FirstConfessionFalse",
+      "SecondConfessionFalse",
+	  ">=6DenialLevel",
+	  ">=6FutilityLevel",
+	  ">=6EgoLevel",
+	  "<=4AttentionLevel"
+    ],
+    "intent": 2,
+    "response": [
+      "*grunts*",
+      "*avoids eye contact*",
+      "*crosses arms*",
+	  "*seems frustrated*",
+    ],
+    "remember": [
+      ""
+    ],
+    "trigger": [
+      "+=1FutilityLevel"
+    ]
+  },
+  {
+    "name": "Confront  [!H] D,  [H] F,  [H] E,  [L] A",
+    "criteria": [
+      "FirstConfessionFalse",
+      "SecondConfessionFalse",
+	  "<=6DenialLevel",
+	  ">=6FutilityLevel",
+	  ">=6EgoLevel",
+	  "<=4AttentionLevel"
+    ],
+    "intent": 2,
+    "response": [
+      "*silent*",
+      "*stares off in distance*",
+      "*seems distracted*"
+    ],
+    "remember": [
+      ""
+    ],
+    "trigger": [
+      "+=1FutilityLevel"
+    ]
+  },
+  {
+    "name": "Confront [*] D,  [H] F,  [H] E,  [!L] A",
+    "criteria": [
+      "FirstConfessionFalse",
+      "SecondConfessionFalse",
+	  ">=6FutilityLevel",
+	  ">=6EgoLevel",
+	  ">=4AttentionLevel"
+    ],
+    "intent": 2,
+    "response": [
+      "I didnt mean to hurt him",
+      "it was an accident",
+      "i only meant to scare him",
+	  "i didnt really mean to do it",
+    ],
+    "remember": [
+      ""
+    ],
+    "trigger": [
+      "FirstConfessionTrue",
+    ]
+  },
+  {
+    "name": "Confront Emotional [!H] D,  [!H] F,  [*] E,  [!L] A",
+    "criteria": [
+      "IsEmotional",
+      "FirstConfessionFalse",
+      "SecondConfessionFalse",
+	  "<=6DenialLevel",
+	  "<=6FutilityLevel",
+	  ">=4AttentionLevel"
+    ],
+    "intent": 2,
+    "response": [
+      "i love him, i wouldnt hurt him",
+      "please, you must know i wouldnt hurt him",
+      "i could never hurt him, you know that"
+    ],
+    "remember": [
+      "Denied"
+    ],
+    "trigger": [
+      "+=1DenialLevel",
+	  "+=2FutilityLevel"
+    ]
+  },
+  {
+    "name": "Confront NonEmotional [!H] D,  [!H] F,  [*] E,  [!L] A",
+    "criteria": [
+      "IsNotEmotional",
+      "FirstConfessionFalse",
+      "SecondConfessionFalse",
+	  "<=6DenialLevel",
+	  "<=6FutilityLevel",
+	  ">=4AttentionLevel"
+    ],
+    "intent": 2,
+    "response": [
+      "you know i didnt do this",
+	  "you have no proof",
+	  "you are crazy to think that i did this"
+    ],
+    "remember": [
+      "Denied"
+    ],
+    "trigger": [
+      "+=1DenialLevel",
+	  "+=2FutilityLevel"
+    ]
+  },
+  {
+    "name": "Confront Emotional [H] D,  [!H] F,  [*] E,  [!L] A",
+    "criteria": [
+      "IsEmotional",
+      "FirstConfessionFalse",
+      "SecondConfessionFalse",
+	  ">=6DenialLevel",
+	  "<=6FutilityLevel",
+	  ">=4AttentionLevel"
+    ],
+    "intent": 2,
+    "response": [
+      "I DIDNT HURT HIM",
+      "I WOULD NEVER HURT HIM",
+      "NO I DID NOT HURT HIM"
+    ],
+    "remember": [
+      "Denied"
+    ],
+    "trigger": [
+      "+=1DenialLevel",
+	  "+=1FutilityLevel"
+    ]
+  },
+  {
+    "name": "Confront NonEmotional [H] D,  [!H] F,  [*] E,  [!L] A",
+    "criteria": [
+      "IsNotEmotional",
+      "FirstConfessionFalse",
+      "SecondConfessionFalse",
+	  ">=6DenialLevel",
+	  "<=6FutilityLevel",
+	  ">=4AttentionLevel"
+    ],
+    "intent": 2,
+    "response": [
+      "im tired of this",
+	  "leave me alone",
+	  "im not going to take this much longer"
+    ],
+    "remember": [
+      "Denied"
+    ],
+    "trigger": [
+      "+=1DenialLevel",
+	  "+=2FutilityLevel"
+    ]
+  },
+  {
+    "name": "Confront Emotional [!H] D,  [!H] F,  [*] E,  [L] A",
+    "criteria": [
+      "IsEmotional",
+      "FirstConfessionFalse",
+      "SecondConfessionFalse",
+	  "<=6DenialLevel",
+	  "<=6FutilityLevel",
+	  "<=4AttentionLevel"
+    ],
+    "intent": 2,
+    "response": [
+      "*seems distracted*",
+      "*hums mealody*",
+      "*stares off at the wall*"
+    ],
+    "remember": [
+      "Denied"
+    ],
+    "trigger": [
+      "+=1DenialLevel",
+	  "+=2FutilityLevel"
+    ]
+  },
+  {
+    "name": "Confront NonEmotional [!H] D,  [!H] F,  [*] E,  [L] A",
+    "criteria": [
+      "IsNotEmotional",
+      "FirstConfessionFalse",
+      "SecondConfessionFalse",
+	  "<=6DenialLevel",
+	  "<=6FutilityLevel",
+	  "<=4AttentionLevel"
+    ],
+    "intent": 2,
+    "response": [
+      "*rolls eyes*",
+	  "bullshit",
+	  "im innocent"
+    ],
+    "remember": [
+      "Denied"
+    ],
+    "trigger": [
+      "+=1DenialLevel",
+	  "+=2FutilityLevel"
+    ]
+  },
+  {
+    "name": "Confront Emotional [H] D,  [!H] F,  [*] E,  [L] A",
+    "criteria": [
+      "IsEmotional",
+      "FirstConfessionFalse",
+      "SecondConfessionFalse",
+	  ">=6DenialLevel",
+	  "<=6FutilityLevel",
+	  "<=4AttentionLevel"
+    ],
+    "intent": 2,
+    "response": [
+      "NO",
+      "I DIDNT",
+      "*arms crossed, avoiding eye contact*"
+    ],
+    "remember": [
+      "Denied"
+    ],
+    "trigger": [
+      "+=1DenialLevel",
+	  "+=2FutilityLevel"
+    ]
+  },
+  {
+    "name": "Confront NonEmotional [H] D,  [!H] F,  [*] E,  [L] A",
+    "criteria": [
+      "IsNotEmotional",
+      "FirstConfessionFalse",
+      "SecondConfessionFalse",
+	  ">=6DenialLevel",
+	  "<=6FutilityLevel",
+	  "<=4AttentionLevel"
+    ],
+    "intent": 2,
+    "response": [
+      "im tired",
+	  "go away",
+	  "im done"
+    ],
+    "remember": [
+      "Denied"
+    ],
+    "trigger": [
+      "+=1DenialLevel",
+	  "+=2FutilityLevel"
+    ]
+  },
+  {
+    "name": "Confront Emotional [!H] D,  [H] F,  [!H] E,  [*] A",
+    "criteria": [
+      "IsEmotional",
+      "FirstConfessionFalse",
+      "SecondConfessionFalse",
+	  "<=6DenialLevel",
+	  ">=6FutilityLevel",
+	  "<=6EgoLevel"
+    ],
+    "intent": 2,
+    "response": [
+      "i dont know...",
+	  "i dont feel safe",
+	  "im not comfortable"
+    ],
+    "remember": [
+      ""
+    ],
+    "trigger": [
+      "+=1DenialLevel",
+	  "+=1FutilityLevel"
+    ]
+  },
+  {
+    "name": "Confront NonEmotional [!H] D,  [H] F,  [!H] E,  [*] A",
+    "criteria": [
+      "IsNotEmotional",
+      "FirstConfessionFalse",
+      "SecondConfessionFalse",
+	  "<=6DenialLevel",
+	  ">=6FutilityLevel",
+	  "<=6EgoLevel"
+    ],
+    "intent": 2,
+    "response": [
+      "i cant talk about it",
+	  "i dont want to talk about it",
+	  "i cant tell anyone"
+    ],
+    "remember": [
+      ""
+    ],
+    "trigger": [
+      "+=1DenialLevel",
+	  "+=1FutilityLevel"
+    ]
+  },
+  {
+    "name": "Confront Emotional [H] D,  [H] F,  [!H] E,  [*] A",
+    "criteria": [
+      "IsEmotional",
+      "FirstConfessionFalse",
+      "SecondConfessionFalse",
+	  ">=6DenialLevel",
+	  ">=6FutilityLevel",
+	  "<=6EgoLevel"
+    ],
+    "intent": 2,
+    "response": [
+      "i wont tell you",
+	  "i dont like you",
+	  "stop asking me"
+    ],
+    "remember": [
+      ""
+    ],
+    "trigger": [
+      "+=1DenialLevel",
+	  "+=1FutilityLevel"
+    ]
+  },
+  {
+    "name": "Confront NonEmotional [H] D,  [H] F,  [!H] E,  [*] A",
+    "criteria": [
+      "IsNotEmotional",
+      "FirstConfessionFalse",
+      "SecondConfessionFalse",
+	  ">=6DenialLevel",
+	  ">=6FutilityLevel",
+	  "<=6EgoLevel"
+    ],
+    "intent": 2,
+    "response": [
+      "STOP ASKING ME",
+	  "I DONT WANT TO TALK ANYMORE",
+	  "GET ME OUT OF HERE"
+    ],
+    "remember": [
+      ""
+    ],
+    "trigger": [
+      "+=1DenialLevel",
+	  "+=1FutilityLevel"
+    ]
+  },
+  {
+    "name": "Rationalize NonEmotional [*] D,  [*] F,  [!H] E,  [*] A",
+    "criteria": [
+      "IsNotEmotional",
+      "FirstConfessionFalse",
+      "SecondConfessionFalse",
+	  "<=6EgoLevel"
+    ],
+    "intent": 0,
+    "response": [
+      "you werent there",
+	  "you didnt see what happened",
+	  "i dont make mistakes"
+    ],
+    "remember": [
+      ""
+    ],
+    "trigger": [
+      "+=1EgoLevel"
+    ]
+  },
+  {
+    "name": "Rationalize NonEmotional [*] D,  [*] F,  [H] E,  [*] A",
+    "criteria": [
+      "IsNotEmotional",
+      "FirstConfessionFalse",
+      "SecondConfessionFalse",
+	  ">=6EgoLevel"
+    ],
+    "intent": 0,
+    "response": [
+      "mistakes can happen",
+	  "sometimes i might go too far",
+	  "i cant control everything"
+    ],
+    "remember": [
+      ""
+    ],
+    "trigger": [
+      "+=1EgoLevel",
+	  "-=1AttentionLevel"
+    ]
+  },
+  {
+    "name": "Rationalize Emotional [*] D,  [*] F,  [*] E,  [!L] A",
+    "criteria": [
+      "IsEmotional",
+      "FirstConfessionFalse",
+      "SecondConfessionFalse",
+	  ">=4AttentionLevel"
+    ],
+    "intent": 0,
+    "response": [
+      "i could never hurt him",
+	  "i love him more than anything",
+	  "i swear im not lying"
+    ],
+    "remember": [
+      ""
+    ],
+    "trigger": [
+      "-=1AttentionLevel",
+	  "-=1EgoLevel"
+    ]
+  },
+  {
+    "name": "Rationalize Emotional [*] D,  [*] F,  [*] E,  [L] A",
+    "criteria": [
+      "IsEmotional",
+      "FirstConfessionFalse",
+      "SecondConfessionFalse",
+	  "<=4AttentionLevel"
+    ],
+    "intent": 0,
+    "response": [
+      "no..",
+	  "please no",
+	  "i cant go on"
+    ],
+    "remember": [
+      ""
+    ],
+    "trigger": [
+      "-=1AttentionLevel",
+	  "-=1EgoLevel"
+    ]
+  },
+  {
+    "name": "Sympathize Emotional [*] D,  [*] F,  [!H] E,  [*] A",
+    "criteria": [
+      "IsEmotional",
+      "FirstConfessionFalse",
+      "SecondConfessionFalse",
+	  "<=6EgoLevel"
+    ],
+    "intent": 1,
+    "response": [
+      "i dont cope with everything very well",
+	  "im not doing so great",
+	  "im a failure"
+    ],
+    "remember": [
+      ""
+    ],
+    "trigger": [
+	  "+=1EgoLevel"
+    ]
+  },
+  {
+    "name": "Sympathize Emotional [*] D,  [*] F,  [H] E,  [*] A",
+    "criteria": [
+      "IsEmotional",
+      "FirstConfessionFalse",
+      "SecondConfessionFalse",
+	  ">=6EgoLevel"
+    ],
+    "intent": 1,
+    "response": [
+      "im trying my best",
+	  "im doing better every day",
+	  "im learning to deal with my problems"
+    ],
+    "remember": [
+      ""
+    ],
+    "trigger": [
+	  "+=1EgoLevel",
+	  "-=1AttentionLevel"
+    ]
+  },
+  {
+    "name": "Sympathize NonEmotional [*] D,  [*] F,  [*] E,  [!L] A",
+    "criteria": [
+      "IsEmotional",
+      "FirstConfessionFalse",
+      "SecondConfessionFalse",
+	  ">=4AttentionLevel"
+    ],
+    "intent": 1,
+    "response": [
+      "im not complaining",
+	  "everyone has it rough",
+	  "im not a cry baby"
+    ],
+    "remember": [
+      ""
+    ],
+    "trigger": [
+	  "-=1AttentionLevel",
+	  "-=1EgoLevel"
+    ]
+  },
+  {
+    "name": "Sympathize NonEmotional [*] D,  [*] F,  [*] E,  [L] A",
+    "criteria": [
+      "IsEmotional",
+      "FirstConfessionFalse",
+      "SecondConfessionFalse",
+	  "<=4AttentionLevel"
+    ],
+    "intent": 1,
+    "response": [
+      "no",
+	  "life is life",
+	  "whatever"
+    ],
+    "remember": [
+      ""
+    ],
+    "trigger": [
+	  "-=1AttentionLevel",
+	  "-=1EgoLevel"
+    ]
+  },
+  {
+    "name": "Engage [*] D,  [*] F,  [*] E,  [*] A",
+    "criteria": [
+      "FirstConfessionFalse",
+      "SecondConfessionFalse"
+    ],
+    "intent": 3,
+    "response": [
+      "oh",
+	  "sorry",
+	  "yeah im here",
+	  "sorry just tired",
+	  "oh this has been exhausting"
+    ],
+    "remember": [
+      ""
+    ],
+    "trigger": [
+	  "+=1AttentionLevel"
+    ]
+  }
+]
